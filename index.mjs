@@ -18,13 +18,14 @@ async function registrarUsuario() {
         const response = await axios.get('https://randomuser.me/api/?results=12');
         const usuario = response.data.results[i];
         const id = uuidv4().slice(0, 6);
-        usuarios.push({...usuario, id, timestamp });
         console.log(chalk.bgWhite.blue(`#${i + 1}. Nombre: ${usuario.name.first} - Apellido: ${usuario.name.last} - ID: ${id} - timestamp: ${timestamp}`));
     } catch (error) {
         console.error('Error al registrar usuario:', error);
     }
 }
 }
+
+
 
 registrarUsuario();
 
