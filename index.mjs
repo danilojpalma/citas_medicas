@@ -1,13 +1,15 @@
 import express from 'express';
-const app = express();
-const port = 3000;
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment';
 import _ from 'lodash';
 import chalk from 'chalk';
 
-app.use(express.json());
+
+const app = express();
+const port = 3000;
+
+//app.use(express.json());
 
 let usuarios = [];
 
@@ -75,5 +77,5 @@ app.get('/usuarios', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+    console.log(`Servidor corriendo en http://localhost:${port}/usuarios`);
 });
